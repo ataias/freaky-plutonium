@@ -13,3 +13,16 @@
     - Reverso
     - Collins French
     - [[https://www.le-dictionnaire.com/][Le Dictionnaire]]
+
+** Ideas
+- Use lynx to download the text version of a word definition or usage examples
+#+BEGIN_SRC sh
+  # Get definition for aveuglement in a text file
+  # Get the data
+  lynx -display_charset=UTF-8 \
+       -dump "https://context.reverso.net/translation/french-english/aveuglement" \
+       > aveuglement.txt
+  # Now you should slice and dice the data, as well as format it, should be easy
+#+END_SRC
+
+- Parse the data, using Rust or F#

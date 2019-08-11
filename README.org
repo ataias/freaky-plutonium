@@ -1,0 +1,15 @@
+* freaky-plutonium
+** Purpose
+   Search words in multiple dictionaries, so that I can avoid Cmd + Tab all the
+   time. A secondary goal is to help me creating Anki flashcards more easily by
+   suggesting cards instead of me digging for all the pieces and doing a lot of
+   repetitive manual work.
+
+** Philosophy
+   Reuse programs that do parts of the work as much as possible.
+** Scope
+*** French Sources
+    - Larousse
+    - Reverso
+    - Collins French
+    - [[https://www.le-dictionnaire.com/][Le Dictionnaire]]

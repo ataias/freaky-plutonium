@@ -33,12 +33,9 @@
 ** TODO Create function to read a file
   - [ ] Write Function
   - [ ] Make sure you handle if the file does not exist
-** TODO Parse reverso file
-   - [ ] Discard initial metadata
-     - get lines
-     - filter until you find Translation of word
-     - remove all (BUTTON)
-     - remove all links
-       - they don't seem helpful
-     - Create a type for translations and another for suggestions
-     - Read suggestions from file into type
+** TODO Parse reverso file [20%]
+   - [X] filter until you find Translation of word
+   - [ ] remove all (BUTTON)
+   - [ ] remove all links (they don't seem helpful)
+   - [ ] Create a type for translations and another for suggestions
+   - [ ] Read suggestions from file into type

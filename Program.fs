@@ -32,6 +32,17 @@ let download_reverso (word:string) : string =
     let link = String.Format(reverso_base, word)
     download_page link
 
+exception UnexpectedDataFormat of string
+
+let trim_reverso (data:string) : string option =
+    let separator = "Translation of"
+    let parts = data.Split separator |> Seq.toList
+    let data =
+        match parts with
+          | hd::tl::[] -> Some (separator + hd)
+          | _ -> None
+    data
+
 [<EntryPoint>]
 let main argv =
     printfn "%s" (download_reverso "aveuglement")

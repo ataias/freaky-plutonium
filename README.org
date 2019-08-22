@@ -26,3 +26,17 @@
 #+END_SRC
 
 - Parse the data, using Rust or F#
+- Handle known words in a database. Would need some frontend. Similar to LINQ.
+** Next Steps
+** TODO Finish function for downloading data from [0%]
+  - [ ] Reverso
+  - [ ] Larousse
+** TODO Create function to read a file
+  - [ ] Write Function
+  - [ ] Make sure you handle if the file does not exist
+** TODO Parse reverso file [20%]
+   - [X] filter until you find Translation of word
+   - [ ] remove all (BUTTON)
+   - [ ] remove all links (they don't seem helpful)
+   - [ ] Create a type for translations and another for suggestions
+   - [ ] Read suggestions from file into type

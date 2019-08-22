@@ -4,7 +4,7 @@ open System
 open System.Diagnostics
 
 /// Runs programs and gets standard output in variable
-let run_cmd (cmd:string) (args:string) : string =
+let runCmd (cmd:string) (args:string) : string =
     let proc = new Process(
                 StartInfo = ProcessStartInfo(
                     FileName = cmd,
@@ -17,24 +17,26 @@ let run_cmd (cmd:string) (args:string) : string =
     proc.Start() |> ignore
     proc.StandardOutput.ReadToEnd()
 
-let make_lynx_args (base_link:string) : string =
+let makeLynxArgs (baseLink:string) : string =
     [ "-display_charset=UTF-8";
         "-dump";
-        base_link
+        baseLink
       ] |> List.fold (fun x y -> x + " " + y) ""
 
-let download_page (link:string) : string =
-    let args = make_lynx_args link
-    run_cmd "lynx" args
+/// Asdf asdf
+/// Asdf asdf 2
+let downloadPage (link:string) : string =
+    let args = makeLynxArgs link
+    runCmd "lynx" args
 
-let download_reverso (word:string) : string =
-    let reverso_base = "https://context.reverso.net/translation/french-english/{0}"
-    let link = String.Format(reverso_base, word)
-    download_page link
+let downloadReverso (word:string) : string =
+    let reversoBase = "https://context.reverso.net/translation/french-english/{0}"
+    let link = String.Format(reversoBase, word)
+    downloadPage link
 
 exception UnexpectedDataFormat of string
 
-let trim_reverso (data:string) : string option =
+let trimReverso (data:string) : string option =
     let separator = "Translation of"
     let parts = data.Split separator |> Seq.toList
     let data =
@@ -45,5 +47,5 @@ let trim_reverso (data:string) : string option =
 
 [<EntryPoint>]
 let main argv =
-    printfn "%s" (download_reverso "aveuglement")
+    printfn "%s" (downloadReverso "aveuglement")
     0 // return an integer exit code
